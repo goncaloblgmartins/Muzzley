@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Muzzley - GM</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Round slider -->
+    <link href="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.css" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+
+    <style type="text/css">
+        /* Typography */
+
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url('fonts/glyphicons-halflings-regular.eot');
+            src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+        }
+        /* Navbar */
+
+        .navbar {
+            background-color: #ed0000;
+            border: none;
+        }
+        /* Branding */
+
+        .navbar-brand {
+            background: url("data:image/png;base64,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") no-repeat center center / 118px 32px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            text-align: center;
+            text-indent: -9999px;
+            top: 0;
+            width: 100%;
+        }
+        /* Slider */
+
+        .rs-control .rs-range-color {
+            background-color: #dfe0e4;
+            border: none;
+        }
+
+        .rs-control .rs-path-color {
+            background-color: #9fa7b2;
+            border: none !important;
+        }
+
+        .rs-control .rs-handle {
+            -moz-box-shadow: 0 0 5px #666666;
+            -webkit-box-shadow: 0 0 5px #666666;
+            background-color: #dfe0e4;
+            box-shadow: 0 0 5px #666666;
+            border: 1px solid #ffffff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- Start Navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Muzzley</a>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- Start Slider -->
+                <div id="slider"></div>
+                <!-- End Slider -->
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Round slider jQuery plugin -->
+    <script src="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            function setSliderValue(id, value) {
+                $(id).roundSlider("setValue", 100 - value);
+            }
+
+            $("#slider").roundSlider({
+                sliderType: "min-range",
+                handleShape: "round",
+                radius: 125,
+                value: 0,
+                min: 0,
+                max: 100,
+                animation: false,
+                showTooltip: false,
+                editableTooltip: false,
+                width: 3,
+                handleSize: "+15",
+                circleShape: "custom-quarter",
+                startAngle: 180,
+                endAngle: 90,
+
+                tooltipFormat: function(args) {
+                    return 100 - args.value;
+                }
+            });
+
+            setSliderValue("#slider", 20);
+        });
+    </script>
+
+
+</body>
+
+</html>
